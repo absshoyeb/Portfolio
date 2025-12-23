@@ -1,0 +1,352 @@
+/*GLOBAL STYLES*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1b1b1b, #2a2a2a);
+  color: #e8e8e8;
+  line-height: 1.6;
+}
+
+/*HEADER*/
+header#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #2b2b2b, #3e2f1c);
+  padding: 2rem;
+  margin: 60px 40px;
+  border-radius: 80px;
+  color: #f9f9f9;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+header#home .bismillah {
+  font-size: 5rem;
+  color: #f0c96d;
+  margin-bottom: 1rem;
+}
+
+header#home .hero-name {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+header#home .hero-role {
+  font-size: 1.5rem;
+  color: #d5b15e;
+  margin-bottom: 1rem;
+}
+
+header#home img {
+  border-radius: 50%;
+  border: 4px solid #d5b15e;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+header#home img:hover {
+  transform: scale(1.1);
+}
+
+header#home .hero-welcome {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+/*========================
+  SECTIONS LAYOUT (GRID)
+  Makes cards symmetrical
+=========================*/
+.split-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 60px 40px;
+  align-items: stretch; /* ✅ equal heights */
+}
+
+/* Education & Skills (left wider) + Projects (right narrower) */
+#edu-skills {
+  grid-template-columns: 2fr 1fr;
+}
+
+/*BOXES*/
+.column {
+  width: 100%; /* ✅ grid-friendly */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 20px;
+  color: #e0e0e0;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  height: 100%; /* ✅ ensures full stretch */
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #d5b15e;
+  padding-bottom: 0.5rem;
+  color: #f5dca8;
+}
+
+.about-me p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #f0f0f0;
+}
+
+.about-me strong {
+  color: #ffb400;
+}
+
+.about-me em {
+  color: #ccc;
+  font-style: normal;
+}
+
+/*TABLE STYLING*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+table th,
+table td {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+table th {
+  width: 35%;
+  color: #d5b15e;
+}
+
+/*WORK LINK*/
+.works-links {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.works-links img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.works-links img:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.3);
+}
+
+/*FOOTER*/
+footer {
+  margin: 60px 40px;
+  background: linear-gradient(135deg, #3e2f1c, #2b2b2b);
+  border-radius: 80px;
+  padding: 2rem;
+  text-align: center;
+  color: #f9f9f9;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.footer-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/*DOWNLOAD CV BUTTON*/
+.cv-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #d5b15e;
+  color: #121212;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cv-download:hover {
+  background-color: #e5c879;
+  transform: translateY(-2px);
+}
+
+.cv-download img {
+  width: 25px;
+  height: 25px;
+}
+
+/*SOCIAL LINKS*/
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  filter: brightness(0.9);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links a img:hover {
+  filter: brightness(1.3);
+  transform: translateY(-2px);
+}
+
+/*COPYRIGHT*/
+footer p {
+  margin-top: 1rem;
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+/*=============================
+  SKILLS (3 GROUPS + 5 DOTS + ICON)
+==============================*/
+.skills-groups {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 0.75rem;
+}
+
+.skills-group {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.skills-group-title {
+  margin: 0 0 0.75rem 0;
+  color: #f5dca8;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(213, 177, 94, 0.35);
+  padding-bottom: 0.5rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.skill-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.skill-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex: 0 0 auto;
+  filter: brightness(0.95);
+}
+
+.skill-name {
+  font-size: 1rem;
+  color: #e8e8e8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 5 dots (4 filled + 1 empty) */
+.skill-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+.skill-level .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 2px solid #d5b15e;
+  background: transparent;
+  opacity: 0.85;
+}
+
+.skill-level .dot.filled {
+  background: #d5b15e;
+}
+
+.skill-item:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+  border-color: rgba(213, 177, 94, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .split-section {
+    grid-template-columns: 1fr;
+  }
+
+  #edu-skills {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .split-section {
+    padding: 40px 18px;
+  }
+
+  header#home,
+  footer {
+    margin: 40px 18px;
+    border-radius: 40px;
+  }
+
+  .skill-item {
+    padding: 0.55rem 0.6rem;
+  }
+
+  .skill-level {
+    gap: 6px;
+  }
+}
